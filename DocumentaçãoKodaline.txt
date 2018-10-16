@@ -1,0 +1,391 @@
+﻿INSTITUTO FEDERAL DE ALAGOAS - IFAL CAMPUS RIO LARGO
+TÉCNICO EM INFORMÁTICA PARA INTERNET
+Programação Web II
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FOTOGRAFIA
+DOCUMENTO DE REQUISITOS 
+
+
+
+
+AFONSO GABRIEL JUSTINO DE ARAÚJO
+JANAINE FERREIRA DOS SANTOS
+SAMUEL VELOSO DE AMORIM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RIO LARGO, 2018
+
+
+SUMÁRIO 
+
+
+
+
+1. Introdução        2
+1.1 Motivação        2
+1.2 Problemática        2
+1.3 Convenção para Identificação dos Requisitos        2
+2. Requisitos Funcionais        3
+2.1 [RF01] Manter Bens  //FALTA PREENCHER        3
+2.2 [RF02] Movimentações  //FALTA PREENCHER        3
+2.3 [RF03] Manter Unidades  //FALTA PREENCHER        3
+3. Modelo de Dados        4
+3.1 Autenticação e Cadastro de Usuários
+//FALTA PREENCHER        4
+4. Casos de uso                                                                                                                      5
+
+
+5. Diagrama de Classes  //FALTA PREENCHER                                                                                                   6                                                                                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+1. INTRODUÇÃO
+
+
+1.1 Motivação
+
+
+  Com o crescimento significativo da tecnologia e o avanço da informação, atualmente, é nítido o crescimento de algumas redes sociais, à exemplo, o Instagram, que popularizou-se entre os jovens e pessoas de diversas idades. Com base nisso, pensou-se em criar uma plataforma, onde clientes podem consultar fotógrafos no qual fosse da sua própria escolha, ou seja, de acordo com a necessidade do cliente. Em contrapartida, o fotógrafo no qual tiver interesse em querer fazer uma conta na plataforma, poderá criar seu portfólio no site, adicionando ao seu perfil, fotos próprias e criando álbuns para que futuros clientes possam ter acesso ao seu trabalho, assim como, marcar ensaios, ou outras programações do querer do cliente.
+
+
+1.2  Problemática
+//FALTA PREENCHER
+
+
+1.3 Convenção para Identificação dos Requisitos
+
+
+//FALTA PREENCHER  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. REQUISITOS FUNCIONAIS 
+
+
+2.1 [RF01] Manter Bens
+Identificação:
+	[RF01] Manter Bens
+	Descrição:
+	FALTA PREENCHER
+	Prioridade:
+	() Essencial          (  ) Importante          (  ) Desejável
+	
+
+2.2 [RF02] Movimentações         
+Identificação:
+	[RF02] Movimentações
+	Descrição:
+	FALTA PREENCHER
+	Prioridade:
+	() Essencial          () Importante          (  ) Desejável
+	
+
+2.3 [RF03] Manter Unidades
+Identificação:
+	[RF03] Manter Unidades
+	Descrição:
+	FALTA PREENCHER
+	Prioridade:
+	() Essencial          () Importante          (  ) Desejável
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3. MODELO DE DADOS
+ //FALTA PREENCHER
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4. CASOS DE USO
+
+
+        
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5. DIAGRAMA DE CLASSES
+//FALTA PREENCHER
