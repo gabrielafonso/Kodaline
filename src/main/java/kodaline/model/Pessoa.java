@@ -13,7 +13,7 @@ public class Pessoa{
 	private Long id;
 	@Column(nullable=false)
 	private String nome;
-	@Column(nullable=false)
+	@Column(nullable=false, unique=true)
 	private String email;
 	@Column(nullable=false)
 	private String telefone;
