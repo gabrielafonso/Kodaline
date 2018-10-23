@@ -12,9 +12,9 @@ public class Cliente {
 	@Id	
 	@GeneratedValue
 	private Long id;
-	@Column
+	@Column(nullable=false)
 	private String dadosBancarios;
-	@Column
+	@Column(nullable=false)
 	private String pedidos;
 	
 	public String getDadosBancarios() {

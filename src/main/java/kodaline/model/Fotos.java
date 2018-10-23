@@ -12,9 +12,9 @@ public class Fotos {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@Column
+	@Column(nullable=false)
 	private LocalDate date;
-	@Column
+	@Column(nullable=false)
 	private String detalhes;
 	
 	public LocalDate getDate() {
