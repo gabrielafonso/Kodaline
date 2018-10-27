@@ -11,11 +11,11 @@ public class Pessoa{
 	@Id
 	@GeneratedValue
 	private Long id;
-	@Column(nullable=false)
+	@Column(name = "Nome" ,nullable=false)
 	private String nome;
-	@Column(nullable=false, unique=true)
+	@Column(name = "E-mail", nullable=false, unique=true)
 	private String email;
-	@Column(nullable=false)
+	@Column(name = "Telefone", nullable=false)
 	private String telefone;
 	
 	public String getNome() {

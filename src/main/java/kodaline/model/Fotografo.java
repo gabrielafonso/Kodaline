@@ -12,9 +12,9 @@ public class Fotografo {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@Column(nullable=false)
+	@Column(name = "Album",nullable=false)
 	private String album;
-	@Column(nullable=false)
+	@Column(name = "Fotos",nullable=false)
 	private String fotos;
 	
 	public String getAlbum() {

@@ -11,9 +11,9 @@ public class Album {
 	@Id
 	@GeneratedValue
 	private Long id;
-	@Column(nullable=false)
+	@Column(name = "Titulo_Album",nullable=false)
 	private String titulo;
-	@Column(nullable=false)
+	@Column(name = "Quantidade_Fotos",nullable=false)
 	private String qntfotos;
 	
 	
