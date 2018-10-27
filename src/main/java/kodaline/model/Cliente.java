@@ -34,6 +34,43 @@ public class Cliente {
 	public Cliente() {
 		super();
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((dadosBancarios == null) ? 0 : dadosBancarios.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + ((pedidos == null) ? 0 : pedidos.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cliente other = (Cliente) obj;
+		if (dadosBancarios == null) {
+			if (other.dadosBancarios != null)
+				return false;
+		} else if (!dadosBancarios.equals(other.dadosBancarios))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (pedidos == null) {
+			if (other.pedidos != null)
+				return false;
+		} else if (!pedidos.equals(other.pedidos))
+			return false;
+		return true;
+	}
+	
+	
 	
 	
 
