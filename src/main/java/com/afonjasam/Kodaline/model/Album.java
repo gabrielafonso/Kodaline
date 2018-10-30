@@ -6,7 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-public class Album {
+public class Album  extends Fotos{
 
 	@Id
 	@GeneratedValue
