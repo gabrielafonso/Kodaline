@@ -5,4 +5,4 @@
  * @author aluno
  *
  */
-package kodaline.model;
+package com.afonjasam.Kodaline.model;

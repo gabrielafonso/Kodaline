@@ -1,10 +1,7 @@
-package kodaline.model;
+package com.afonjasam.Kodaline.model;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 
 @Entity
 public class Fotos {
@@ -13,7 +10,8 @@ public class Fotos {
 	@GeneratedValue
 	private Long id;
 	@Column(name = "Data", nullable=false)
-	@Temporal (TemporalType.DATE)
+	
+	
 	private LocalDate date;
 	@Column(name = "Detalhes", nullable=false)
 	private String detalhes;
