@@ -6,7 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-public class Pessoa{
+public  abstract class Pessoa{
 
 	@Id
 	@GeneratedValue
