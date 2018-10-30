@@ -7,7 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-public class Cliente {
+public class Cliente extends Pessoa {
 
 	@Id	
 	@GeneratedValue

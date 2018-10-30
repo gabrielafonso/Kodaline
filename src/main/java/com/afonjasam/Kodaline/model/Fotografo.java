@@ -7,7 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-public class Fotografo {
+public class Fotografo extends Pessoa {
 	
 	@Id
 	@GeneratedValue

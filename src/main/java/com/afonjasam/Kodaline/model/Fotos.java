@@ -11,7 +11,6 @@ public class Fotos {
 	private Long id;
 	@Column(name = "Data", nullable=false)
 	
-	
 	private LocalDate date;
 	@Column(name = "Detalhes", nullable=false)
 	private String detalhes;
