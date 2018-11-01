@@ -29,7 +29,7 @@ public class FotosController {
 		return fotosRepository.findAll(pageable);	
 	}
 	
-	@PostMapping("/familymember")
+	@PostMapping("/fotos")
 	public Fotos creatFotos(@Valid @RequestBody Fotos fotos) {
 		return fotosRepository.save(fotos);	
 	}
