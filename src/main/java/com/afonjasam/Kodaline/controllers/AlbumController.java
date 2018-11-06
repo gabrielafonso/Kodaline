@@ -1,5 +1,7 @@
 package com.afonjasam.Kodaline.controllers;
 
+import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +29,15 @@ public class AlbumController {
 	private AlbumRepository albumRepository;
 	
 	@GetMapping("/album")
-	public Page<Album> getAlbum(Pageable pageable){
+	public Page<Album> getAlbuns(Pageable pageable){
 		return albumRepository.findAll(pageable);	
+	}
+	
+	@GetMapping("/album/{albumId}")
+	public Album getAlbum(@PathVariable Long albumId){
+		return albumRepository.findById(albumId)
+				.orElseThrow(() -> new ResourceNotFoundException("Album not found: " + albumId));
+
 	}
 	
 	@PostMapping("/album")

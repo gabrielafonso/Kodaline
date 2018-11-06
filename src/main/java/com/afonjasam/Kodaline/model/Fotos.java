@@ -3,6 +3,7 @@ package com.afonjasam.Kodaline.model;
 import java.time.LocalDate;
 import javax.persistence.*;
 
+
 @Entity
 public class Fotos {
 	
@@ -16,6 +17,19 @@ public class Fotos {
 	@Column(name = "detalhes", nullable=false)
 	private String detalhes;
 	
+	@ManyToOne(cascade=CascadeType.ALL)
+	private Album album;
+	
+
+	public Album getAlbum() {
+		return album;
+	}
+	public void setAlbum(Album album) {
+		this.album = album;
+	}
+	public Long getId() {
+		return id;
+	}
 	public LocalDate getDate() {
 		return date;
 	}

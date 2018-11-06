@@ -7,15 +7,20 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
-public class Cliente extends Pessoa {
+public class Cliente {
 
 	@Id	
 	@GeneratedValue
 	private Long id;
+	
+	@Column(name = "nome" ,nullable=false)
+	private String nome;
+	@Column(name = "email", nullable=false, unique=true)
+	private String email;
+	@Column(name = "telefone", nullable=false)
+	private String telefone;
 	@Column(name = "dados_bancarios",nullable=false)
 	private String dadosBancarios;
-	@Column(name = "pedidos",nullable=false)
-	private String pedidos;
 	
 	public String getDadosBancarios() {
 		return dadosBancarios;
@@ -23,24 +28,36 @@ public class Cliente extends Pessoa {
 	public void setDadosBancarios(String dadosBancarios) {
 		this.dadosBancarios = dadosBancarios;
 	}
-	public String getPedidos() {
-		return pedidos;
+	public String getNome() {
+		return nome;
 	}
-	public void setPedidos(String pedidos) {
-		this.pedidos = pedidos;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
-	
-	
-	public Cliente() {
-		super();
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	public Long getId() {
+		return id;
 	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((dadosBancarios == null) ? 0 : dadosBancarios.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		result = prime * result + ((pedidos == null) ? 0 : pedidos.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((telefone == null) ? 0 : telefone.hashCode());
 		return result;
 	}
 	@Override
@@ -57,21 +74,29 @@ public class Cliente extends Pessoa {
 				return false;
 		} else if (!dadosBancarios.equals(other.dadosBancarios))
 			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
 		} else if (!id.equals(other.id))
 			return false;
-		if (pedidos == null) {
-			if (other.pedidos != null)
+		if (nome == null) {
+			if (other.nome != null)
 				return false;
-		} else if (!pedidos.equals(other.pedidos))
+		} else if (!nome.equals(other.nome))
+			return false;
+		if (telefone == null) {
+			if (other.telefone != null)
+				return false;
+		} else if (!telefone.equals(other.telefone))
 			return false;
 		return true;
 	}
-	
-	
-	
+
 	
 
 }

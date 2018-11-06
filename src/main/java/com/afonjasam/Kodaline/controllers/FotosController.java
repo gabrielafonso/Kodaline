@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.afonjasam.Kodaline.exception.ResourceNotFoundException;
+import com.afonjasam.Kodaline.model.Album;
 import com.afonjasam.Kodaline.model.Fotos;
 import com.afonjasam.Kodaline.repository.FotosRepository;
 
@@ -27,6 +28,13 @@ public class FotosController {
 	@GetMapping("/fotos")
 	public Page<Fotos> getFoto(Pageable pageable){
 		return fotosRepository.findAll(pageable);	
+	}
+	
+	@GetMapping("/fotos/{fotosId}")
+	public Fotos getAlbum(@PathVariable Long fotosId){
+		return fotosRepository.findById(fotosId)
+				.orElseThrow(() -> new ResourceNotFoundException("Album not found: " + fotosId));
+
 	}
 	
 	@PostMapping("/fotos")

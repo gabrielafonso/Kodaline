@@ -16,39 +16,49 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.afonjasam.Kodaline.exception.ResourceNotFoundException;
 import com.afonjasam.Kodaline.repository.FotografoRepository;
+import com.afonjasam.Kodaline.model.Album;
 import com.afonjasam.Kodaline.model.Fotografo;
 
 @RestController
 public class FotografoController {
 
 	@Autowired
-	private FotografoRepository fotograforepository;
+	private FotografoRepository fotografoRepository;
 	
 	@GetMapping("/fotografo")
 	public Page<Fotografo>getFotografos(Pageable pageable){
-		return fotograforepository.findAll(pageable);
+		return fotografoRepository.findAll(pageable);
+	}
+	
+	@GetMapping("/fotografo/{fotografoId}")
+	public Fotografo getAlbum(@PathVariable Long fotografoId){
+		return fotografoRepository.findById(fotografoId)
+				.orElseThrow(() -> new ResourceNotFoundException("Album not found: " + fotografoId));
+
 	}
 	
 	@PostMapping("/fotografo")
 	public Fotografo createFotografo(@Valid @RequestBody Fotografo fotografo){
-		return fotograforepository.save(fotografo);
+		return fotografoRepository.save(fotografo);
 }
 	@PutMapping("/fotografo /{fotografoId}")
 	public Fotografo updateFotografo (@PathVariable Long fotografoId, 
 			                          @Valid @RequestBody Fotografo fotografoRequest) {
-		return fotograforepository.findById(fotografoId)
-				.map(fotografo->{
+		return fotografoRepository.findById(fotografoId)
+				.map(fotografo -> {
 					fotografo.setAlbum(fotografoRequest.getAlbum());
-					fotografo.setFotos(fotografoRequest.getFotos());
-		            return fotograforepository.save(fotografo);
+					fotografo.setEmail(fotografoRequest.getEmail());
+					fotografo.setNome(fotografoRequest.getNome());
+					fotografo.setTelefone(fotografoRequest.getTelefone());
+		            return fotografoRepository.save(fotografo);
 		}).orElseThrow(()-> new ResourceNotFoundException("Fotografo not found: " +fotografoId));
 	}
 	
 	@DeleteMapping("/fotografo/{fotografoId}")
 	public ResponseEntity<?> deleteQuestion(@PathVariable Long fotografoId){
-		return fotograforepository.findById(fotografoId)
+		return fotografoRepository.findById(fotografoId)
 				.map(fotografo -> {
-					fotograforepository.delete(fotografo);
+					fotografoRepository.delete(fotografo);
 					return ResponseEntity.ok().build();
 				}).orElseThrow(() -> new ResourceNotFoundException("Fotografo not found: " + fotografoId));
 	}

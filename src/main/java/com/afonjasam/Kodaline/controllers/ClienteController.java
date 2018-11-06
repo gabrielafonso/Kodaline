@@ -26,9 +26,16 @@ public class ClienteController {
 	@Autowired
 	private ClienteRepository clienteRepository;
 	
-	@GetMapping("/fotos")
+	@GetMapping("/cliente")
 	public Page<Cliente> getCliente(Pageable pageable){
 		return clienteRepository.findAll(pageable);	
+	}
+	
+	@GetMapping("/cliente/{clienteId}")
+	public Cliente getAlbum(@PathVariable Long clienteId){
+		return clienteRepository.findById(clienteId)
+				.orElseThrow(() -> new ResourceNotFoundException("Album not found: " + clienteId));
+
 	}
 	
 	@PostMapping("/cliente")
@@ -42,7 +49,9 @@ public class ClienteController {
             	return clienteRepository.findById(clienteId)
 				.map(cliente -> {
 					cliente.setDadosBancarios(clienteRequest.getDadosBancarios());
-					cliente.setPedidos(clienteRequest.getPedidos());
+					cliente.setEmail(clienteRequest.getEmail());
+					cliente.setNome(clienteRequest.getNome());
+					cliente.setTelefone(clienteRequest.getTelefone());
 					return clienteRepository.save(cliente);
 		}).orElseThrow(() -> new ResourceNotFoundException("Cliente not found: " + clienteId));
 	}

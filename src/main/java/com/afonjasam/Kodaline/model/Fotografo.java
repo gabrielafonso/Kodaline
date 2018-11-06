@@ -6,40 +6,73 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-import com.profbruno.familywatch.model.Phone;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
-public class Fotografo extends Pessoa {
+public class Fotografo {
 	
 	@Id
 	@GeneratedValue
 	private Long id;
 	
+	@Column(name = "nome" ,nullable=false)
+	private String nome;
+	@Column(name = "email", nullable=false, unique=true)
+	private String email;
+	@Column(name = "telefone", nullable=false)
+	private String telefone;
 	
 	@OneToMany(
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
 	)
-	private List<Album> albuns = new ArrayList<>();
-	
-	
-	public Fotografo() {
-		super();
+	private List<Album> album = new ArrayList<>();
+
+	public String getNome() {
+		return nome;
 	}
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
-		int result = 1;
+		int result = super.hashCode();
 		result = prime * result + ((album == null) ? 0 : album.hashCode());
-		result = prime * result + ((fotos == null) ? 0 : fotos.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
+
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
+		if (!super.equals(obj))
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
@@ -49,11 +82,6 @@ public class Fotografo extends Pessoa {
 				return false;
 		} else if (!album.equals(other.album))
 			return false;
-		if (fotos == null) {
-			if (other.fotos != null)
-				return false;
-		} else if (!fotos.equals(other.fotos))
-			return false;
 		if (id == null) {
 			if (other.id != null)
 				return false;
@@ -61,7 +89,21 @@ public class Fotografo extends Pessoa {
 			return false;
 		return true;
 	}
-	
+
+
+	public List<Album> getAlbum() {
+		return album;
+	}
+
+
+	public void setAlbum(List<Album> albuns) {
+		this.album = albuns;
+	}
+
+
+	public Long getId() {
+		return id;
+	}
 	
 
 	

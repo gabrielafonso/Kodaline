@@ -5,10 +5,9 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-import com.profbruno.familywatch.model.Position;
 
 @Entity
-public class Album  extends Fotos{
+public class Album {
 
 	@Id
 	@GeneratedValue
@@ -32,6 +31,14 @@ public class Album  extends Fotos{
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public List<Fotos> getFotos() {
+		return fotos;
+	}
+
+	public void setFotos(List<Fotos> fotos) {
+		this.fotos = fotos;
 	}
 
 	public String getTitulo() {
