@@ -12,9 +12,9 @@ public class Cliente extends Pessoa {
 	@Id	
 	@GeneratedValue
 	private Long id;
-	@Column(name = "Dados_Bancarios",nullable=false)
+	@Column(name = "dados_bancarios",nullable=false)
 	private String dadosBancarios;
-	@Column(name = "Pedidos",nullable=false)
+	@Column(name = "pedidos",nullable=false)
 	private String pedidos;
 	
 	public String getDadosBancarios() {

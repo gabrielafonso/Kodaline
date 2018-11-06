@@ -6,29 +6,21 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
+import com.profbruno.familywatch.model.Phone;
+
 @Entity
 public class Fotografo extends Pessoa {
 	
 	@Id
 	@GeneratedValue
 	private Long id;
-	@Column(name = "Album",nullable=false)
-	private String album;
-	@Column(name = "Fotos",nullable=false)
-	private String fotos;
 	
-	public String getAlbum() {
-		return album;
-	}
-	public void setAlbum(String album) {
-		this.album = album;
-	}
-	public String getFotos() {
-		return fotos;
-	}
-	public void setFotos(String fotos) {
-		this.fotos = fotos;
-	}
+	
+	@OneToMany(
+			cascade = CascadeType.ALL,
+			orphanRemoval = true
+	)
+	private List<Album> albuns = new ArrayList<>();
 	
 	
 	public Fotografo() {

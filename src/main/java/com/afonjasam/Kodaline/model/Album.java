@@ -5,16 +5,25 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
+import com.profbruno.familywatch.model.Position;
+
 @Entity
 public class Album  extends Fotos{
 
 	@Id
 	@GeneratedValue
 	private Long id;
-	@Column(name = "Titulo_Album",nullable=false)
+	@Column(name = "titulo_album",nullable=false)
 	private String titulo;
-	@Column(name = "Quantidade_Fotos",nullable=false)
+	@Column(name = "quantidade_fotos",nullable=false)
 	private String qntfotos;
+	
+	@OneToMany(
+			mappedBy="album",
+			cascade=CascadeType.ALL,
+			orphanRemoval=true
+			)
+	private List<Fotos> fotos = new ArrayList<>();
 	
 	
 	public Long getId() {
