@@ -3,8 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <title>Kodaline</title>
+
 </head>
 <body>
+<script type="text/javascript">
+let xhr = new XMLHttpRequest();
+xhr.open('GET', '/fotografo');
+
+xhr.onload = function(){
+	if(this.status == 201) alert("Sucesso!!");
+	else console.log(JSON.parse(this.responseText));
+};
+xhr.send();
+
+let xhr2 = new XMLHttpRequest();
+xhr2.open('POST', '/fotografo');
+
+let novo_u = {
+		"nome": "Afonso Padilha",
+        "email": "inferno@satã.com",
+        "telefone": "666",
+        "album": []}
+
+xhr2.setRequestHeader('Content-Type', 'application/json');
+xhr2.send( JSON.stringify(novo_u) );
+
+
+</script>
 
 </body>
 </html>
