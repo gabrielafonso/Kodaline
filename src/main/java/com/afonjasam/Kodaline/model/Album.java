@@ -5,6 +5,8 @@ import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 @Entity
 public class Album {
@@ -22,6 +24,7 @@ public class Album {
 			cascade=CascadeType.ALL,
 			orphanRemoval=true
 			)
+	@JsonBackReference
 	private List<Fotos> fotos = new ArrayList<>();
 	
 	
