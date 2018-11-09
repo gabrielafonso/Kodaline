@@ -13,14 +13,22 @@ function enviarFotografo(){
 	        "album": []}
 
 	xhr.setRequestHeader('Content-Type', 'application/json');
-	xhr.send( JSON.stringify(novo_u) );
+	xhr.send( JSON.stringify(novo_u));
+	window.location.reload();
+}
+
+function getFotografo(id){
+	let xhr = new XMLHttpRequest();
+	let link = "/fotografo/"+id;
+	alert(link);
+	//xhr.open('GET', link);
+	//xhr.send();
 }
 
 function cadastrarFotografo(){
-	let xhr2 = new XMLHttpRequest();
-	xhr2.open('GET', '/fotografo');
-	
-	xhr2.onload = function(){
+	let xhr = new XMLHttpRequest();
+	xhr.open('GET', '/fotografo');
+	xhr.onload = function(){
 		if(this.status == 200){
 
 			let r = JSON.parse(this.responseText);
@@ -33,11 +41,26 @@ function cadastrarFotografo(){
 							<td>${f.nome}</td>
 							<td>${f.email}</td>
 							<td>${f.telefone}</td>
-							</tr>`
+							<td><button onclick="deletarFotografo(${f.id})">Deletar</button></td>
+							<td><button onclick="atualizarFotografo(${f.id})">Editar</button></td>
+						</tr>`
 			});
 		}
 	}
-	xhr2.send();
+	xhr.send();
 }
 
 cadastrarFotografo();
+
+function deletarFotografo(id){
+	let xhr = new XMLHttpRequest();
+	let link = "/fotografo/"+id;
+	xhr.open('DELETE', link);
+	xhr.send();
+	window.location.reload();
+}
+
+function atualizarFotografo(id){
+	let xhr = new XMLHttpRequest();
+	var fotografo = xhr
+}
