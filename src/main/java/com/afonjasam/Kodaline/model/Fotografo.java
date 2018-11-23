@@ -13,10 +13,6 @@ import javax.persistence.OneToMany;
 @Entity
 public class Fotografo extends Usuario{
 	
-	@Id
-	@GeneratedValue
-	private Long id;
-	
 	@Column(name = "nome" ,nullable=false)
 	private String nome;
 	
@@ -40,7 +36,6 @@ public class Fotografo extends Usuario{
 		final int prime = 31;
 		int result = super.hashCode();
 		result = prime * result + ((album == null) ? 0 : album.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 
@@ -59,11 +54,7 @@ public class Fotografo extends Usuario{
 				return false;
 		} else if (!album.equals(other.album))
 			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
+
 		return true;
 	}
 
@@ -76,13 +67,5 @@ public class Fotografo extends Usuario{
 	public void setAlbum(List<Album> albuns) {
 		this.album = albuns;
 	}
-
-
-	public Long getId() {
-		return id;
-	}
-	
-
-	
 	
 }

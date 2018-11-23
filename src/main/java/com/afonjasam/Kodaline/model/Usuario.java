@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.Valid;
 
 @Entity
+@Inheritance(strategy=InheritanceType.JOINED)
 public class Usuario {
 
 	@Id	
