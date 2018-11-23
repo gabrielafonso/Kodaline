@@ -49,7 +49,7 @@ public class ClienteController {
 					cliente.setDadosBancarios(clienteRequest.getDadosBancarios());
 					cliente.setEmail(clienteRequest.getEmail());
 					cliente.setNome(clienteRequest.getNome());
-					cliente.setTelefone(clienteRequest.getTelefone());
+					cliente.setTelefones(clienteRequest.getTelefones());
 					return clienteRepository.save(cliente);
 		}).orElseThrow(() -> new ResourceNotFoundException("Cliente not found: " + clienteId));
 	}

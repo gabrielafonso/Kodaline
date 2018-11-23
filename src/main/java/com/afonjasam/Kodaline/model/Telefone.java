@@ -29,11 +29,11 @@ public class Telefone {
 		this.id = id;
 	}
 
-	public String getNumber() {
+	public String getTelefone() {
 		return number;
 	}
 
-	public void setNumber(String number) {
+	public void setTelefone(String number) {
 		this.number = number;
 	}
 
