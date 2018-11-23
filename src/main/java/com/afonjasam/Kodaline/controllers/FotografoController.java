@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.afonjasam.Kodaline.exception.ResourceNotFoundException;
 import com.afonjasam.Kodaline.model.Fotografo;
+import com.afonjasam.Kodaline.model.Telefone;
 import com.afonjasam.Kodaline.repository.FotografoRepository;
 
 @RestController
@@ -51,6 +52,17 @@ public class FotografoController {
 					fotografo.setTelefones(fotografoRequest.getTelefones());
 		            return fotografoRepository.save(fotografo);
 		}).orElseThrow(()-> new ResourceNotFoundException("Fotografo not found: " +fotografoId));
+	}
+	
+	@PostMapping("fotografo/{fotografoId}/addtelefone")
+	public Fotografo addPhone(@PathVariable Long fotografoId,
+									@Valid @RequestBody Telefone telefone) {
+		return fotografoRepository.findById(fotografoId)
+				.map(fotografo -> {
+					fotografo.addTelefone(telefone);
+					telefone.setOwner(fotografo);
+					return fotografoRepository.save(fotografo);
+				}).orElseThrow(() -> new ResourceNotFoundException("FamilyMember not found: " + fotografoId));
 	}
 	
 	@DeleteMapping("/fotografo/{fotografoId}")
