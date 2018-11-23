@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.afonjasam.Kodaline.exception.ResourceNotFoundException;
 import com.afonjasam.Kodaline.model.Cliente;
-import com.afonjasam.Kodaline.model.Fotos;
 import com.afonjasam.Kodaline.repository.ClienteRepository;
-import com.afonjasam.Kodaline.repository.FotosRepository;
 
 @RestController
 public class ClienteController {
