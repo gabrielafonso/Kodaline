@@ -1,7 +1,5 @@
 package com.afonjasam.Kodaline.controllers;
 
-import java.util.Optional;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.afonjasam.Kodaline.exception.ResourceNotFoundException;
 import com.afonjasam.Kodaline.model.Album;
-import com.afonjasam.Kodaline.model.Fotos;
 import com.afonjasam.Kodaline.repository.AlbumRepository;
-import com.afonjasam.Kodaline.repository.FotosRepository;
 
 @RestController
 public class AlbumController {

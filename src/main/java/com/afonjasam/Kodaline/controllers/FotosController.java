@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.afonjasam.Kodaline.exception.ResourceNotFoundException;
-import com.afonjasam.Kodaline.model.Album;
 import com.afonjasam.Kodaline.model.Fotos;
 import com.afonjasam.Kodaline.repository.FotosRepository;
 

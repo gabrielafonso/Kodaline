@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 
 @Entity
 public class Usuario {
@@ -50,6 +51,10 @@ public class Usuario {
 
 	public Long getId() {
 		return id;
+	}
+	
+	public void addTelefone(@Valid Telefone telefone) {
+		this.telefones.add(telefone);
 	}
 
 	@Override
