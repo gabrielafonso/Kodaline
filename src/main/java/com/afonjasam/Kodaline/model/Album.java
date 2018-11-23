@@ -27,6 +27,8 @@ public class Album {
 	@JsonBackReference
 	private List<Fotos> fotos = new ArrayList<>();
 	
+	@ManyToOne
+	private Fotografo owner;
 	
 	public Long getId() {
 		return id;
