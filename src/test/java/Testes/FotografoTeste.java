@@ -11,10 +11,16 @@ public class FotografoTeste {
 		fail("Not yet implemented");
 	}
 
-
+//
 @Test
-public void NomeComLetrasMinusculas() {
+public void NomeComLetrasMinusculasComEspaco() {
 	String nome = "guilherme fonseca";
+}
+
+//
+@Test
+public void NomeComLetrasMinusculasSemEspaco() {
+	String nome = "guilhermefonseca";
 }
 
 @Test
@@ -26,4 +32,12 @@ public void NomeSemEspaco() {
 public void NomeComNumeros() {
 	String nome = "guilh30rm3 f7892602onsec4";
 }
+
+//
+@Test
+public void NomeComCaracter() {
+	String nome = "gu/lh*@fons*+ ";
+	
+}
+
 }
