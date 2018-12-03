@@ -20,5 +20,10 @@ public class AlbumTesteValidacao {
 	public void testValidarAlbumCorreto() {
 		assertEquals(true, as.validarAlbum("Ifal - fotos", 10));
 	}
+	
+	@Test
+	public void testValidarAlbumQuantidadeDeFotosNegativo() {
+		assertEquals(false, as.validarAlbum("Ifal - fotos", -10));
+	}
 
 }
