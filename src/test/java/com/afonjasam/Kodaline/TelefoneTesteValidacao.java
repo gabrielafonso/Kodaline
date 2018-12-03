@@ -18,7 +18,28 @@ public class TelefoneTesteValidacao {
 
 	@Test
 	public void testValidarTelefoneCorreto() {
-		assertEquals(true, ts.validarTelefone("8212345678"));
+		assertEquals(true, ts.validarTelefone("82123456789"));
+	}
+	
+	@Test
+	public void testValidarTelefoneLetraNoMeio() {
+		assertEquals(false, ts.validarTelefone("82a2345678"));
 	}
 
+	@Test
+	public void testValidarTelefoneEmBranco() {
+		assertEquals(false, ts.validarTelefone(""));
+	}
+
+	@Test
+	public void testValidarTelefoneComEspaco() {
+		assertEquals(false, ts.validarTelefone("82 1234 5678"));
+	}
+
+	@Test
+	public void testValidarTelefoneComCaracteres() {
+		assertEquals(false, ts.validarTelefone("82.1234-5678"));
+	}
+
+	
 }
