@@ -2,7 +2,7 @@ package com.afonjasam.Kodaline.servicos;
 
 public class ClienteServico {
 	
-	public boolean validacaoCliente(String nome, String sobrenome) {
+	public boolean validarCliente(String nome, String sobrenome) {
 		
 		if(nome.length() > 3 && sobrenome.length() > 3) {	
 			for(int i = 0; i < nome.length() ;i++) {
