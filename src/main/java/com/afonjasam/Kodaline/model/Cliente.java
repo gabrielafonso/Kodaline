@@ -11,15 +11,7 @@ public class Cliente extends Usuario {
 	
 	@Column(name = "nome" ,nullable=false)
 	private String nome;
-	@Column(name = "dados_bancarios",nullable=false)
-	private String dadosBancarios;
 	
-	public String getDadosBancarios() {
-		return dadosBancarios;
-	}
-	public void setDadosBancarios(String dadosBancarios) {
-		this.dadosBancarios = dadosBancarios;
-	}
 	public String getNome() {
 		return nome;
 	}
@@ -31,7 +23,6 @@ public class Cliente extends Usuario {
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + ((dadosBancarios == null) ? 0 : dadosBancarios.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
 	}
@@ -44,11 +35,6 @@ public class Cliente extends Usuario {
 		if (getClass() != obj.getClass())
 			return false;
 		Cliente other = (Cliente) obj;
-		if (dadosBancarios == null) {
-			if (other.dadosBancarios != null)
-				return false;
-		} else if (!dadosBancarios.equals(other.dadosBancarios))
-			return false;
 
 		if (nome == null) {
 			if (other.nome != null)
