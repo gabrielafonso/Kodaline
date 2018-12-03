@@ -23,27 +23,27 @@ public class UsuarioTesteValidacao {
 
 	@Test
 	public void testValidarUsuarioSemArroba() {
-		assertEquals(true, sv.validarUsuario("asdsdfg.com", "!@#$%¨&*"));
+		assertEquals(false, sv.validarUsuario("asdsdfg.com", "!@#$%¨&*"));
 	}
 	
 	@Test
 	public void testValidarUsuarioSemPonto() {
-		assertEquals(true, sv.validarUsuario("asdf@sdfgcom", "asdfqwer"));
+		assertEquals(false, sv.validarUsuario("asdf@sdfgcom", "asdfqwer"));
 	}
 	
 	@Test
 	public void testValidarUsuarioVazio() {
-		assertEquals(true, sv.validarUsuario("", ""));
+		assertEquals(false, sv.validarUsuario("", ""));
 	}
 	
 	@Test
 	public void testValidarUsuarioEspaco() {
-		assertEquals(true, sv.validarUsuario(" ", " "));
+		assertEquals(false, sv.validarUsuario(" ", " "));
 	}
 	
 	@Test
 	public void testValidarUsuarioIformacoesInvertidas() {
-		assertEquals(true, sv.validarUsuario("asdf.asd@adf", "12345678"));
+		assertEquals(false, sv.validarUsuario("asdf.asd@adf", "12345678"));
 	}
 	
 }
