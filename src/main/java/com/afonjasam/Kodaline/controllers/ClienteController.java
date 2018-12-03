@@ -47,7 +47,6 @@ public class ClienteController {
 			@Valid @RequestBody Cliente clienteRequest) {
             	return clienteRepository.findById(clienteId)
 				.map(cliente -> {
-					cliente.setDadosBancarios(clienteRequest.getDadosBancarios());
 					cliente.setEmail(clienteRequest.getEmail());
 					cliente.setNome(clienteRequest.getNome());
 					cliente.setTelefones(clienteRequest.getTelefones());
