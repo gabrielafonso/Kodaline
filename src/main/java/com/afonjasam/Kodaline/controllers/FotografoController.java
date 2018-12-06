@@ -49,6 +49,7 @@ public class FotografoController {
 					fotografo.setAlbum(fotografoRequest.getAlbum());
 					fotografo.setEmail(fotografoRequest.getEmail());
 					fotografo.setNome(fotografoRequest.getNome());
+					fotografo.setPassword(fotografoRequest.getPassword());
 					fotografo.setTelefones(fotografoRequest.getTelefones());
 		            return fotografoRepository.save(fotografo);
 		}).orElseThrow(()-> new ResourceNotFoundException("Fotografo not found: " +fotografoId));

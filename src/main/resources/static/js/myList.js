@@ -30,8 +30,7 @@
 function enviarFotografo(){
 	let nome = document.getElementById("nome").value;
 	let email = document.getElementById("email").value;
-	let telefone = document.getElementById("tel").value;
-	let senha = "asdf1234";
+	let senha = document.getElementById("password").value;;
 	let data = {
 		"nome": nome,
 		"email": email,
@@ -78,22 +77,26 @@ function enviarFotografo(){
 
 function listarFotografo(){
 
-	fetch("fotografo").then(function(response){
-		if(response >= 200 && response <= 300){
-			response.JSON().then(fuction(data));
+	fetch("/fotografo").then(function(response){
+		if(response.status >= 200 && response.status <= 300){
+			console.log(response);
+			response.json().then(function(data){
+				let table = document.getElementById("fotografos");
+				console.log(data);
+				table.innerHTML = "<tr><td>Nome</td><td>E-mail</td><td>Senha</td><td>Opções de gerenciamento</td></tr>"
+				for(let i = 0; i < data.content.length ;i++){
+					let f = data.content[i];
+					console.log(f);
+					table.innerHTML += `<tr><td>${f.nome}</td><td>${f.email}</td><td>${f.password}</td><td><button onclick="deletarFotografo(${f.id})">Deletar</button></td><td><button onclick="atualizarFotografo(${f.id})">Editar</button></td></tr>`
+				}	
+			});
 			
-			let table = document.getElementById("fotografos");
-			table.innerHTML = "<tr><td>Nome</td><td>E-mail</td><td>Telefone</td><td>Opções de gerenciamento</td></tr>"
-			for(let i = 0; i < data.content.length ;i++){
-				let f = data.content[i];
-				f.innerHTML += `<tr><td>${f.nome}</td><td>${f.email}</td><td>${f.telefone}</td><td><button onclick="deletarFotografo(${f.id})">Deletar</button></td><td><button onclick="atualizarFotografo(${f.id})">Editar</button></td></tr>`
-			}
 		}
 	});
 	
 }
 
-
+listarFotografo();
 
 function deletarFotografo(id){
 	let xhr = new XMLHttpRequest();
