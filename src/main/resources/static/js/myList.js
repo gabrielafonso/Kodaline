@@ -79,14 +79,14 @@ function listarFotografo(){
 
 	fetch("/fotografo").then(function(response){
 		if(response.status >= 200 && response.status <= 300){
-			console.log(response);
+			//console.log(response);
 			response.json().then(function(data){
 				let table = document.getElementById("fotografos");
-				console.log(data);
+				//console.log(data);
 				table.innerHTML = "<tr><td>Nome</td><td>E-mail</td><td>Senha</td><td>Opções de gerenciamento</td></tr>"
 				for(let i = 0; i < data.content.length ;i++){
 					let f = data.content[i];
-					console.log(f);
+					//console.log(f);
 					table.innerHTML += `<tr><td>${f.nome}</td><td>${f.email}</td><td>${f.password}</td><td><button onclick="deletarFotografo(${f.id})">Deletar</button></td><td><button onclick="atualizarFotografo(${f.id})">Editar</button></td></tr>`
 				}	
 			});

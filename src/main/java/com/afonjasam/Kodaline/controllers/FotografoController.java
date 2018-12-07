@@ -41,7 +41,7 @@ public class FotografoController {
 	public Fotografo createFotografo(@Valid @RequestBody Fotografo fotografo){
 		return fotografoRepository.save(fotografo);
 }
-	@PutMapping("/fotografo /{fotografoId}")
+	@PutMapping("/fotografo/{fotografoId}")
 	public Fotografo updateFotografo (@PathVariable Long fotografoId, 
 			                          @Valid @RequestBody Fotografo fotografoRequest) {
 		return fotografoRepository.findById(fotografoId)
