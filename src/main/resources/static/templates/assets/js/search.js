@@ -17,7 +17,7 @@ inputEle.addEventListener('keyup', function(e){
 						let f = data.content[i];
 						console.log(f);
 						if(`${f.nome}` == fotPesquisa){
-							fotografos.innerHTML += `<tr><td>${f.nome}</td><td>${f.email}</td>`
+							fotografos.innerHTML += `<button type="button" onclick="paginaUsuario(${f.id})"><tr><td>${f.nome}</td><td>${f.email}</td></button>`
 						}
 					}
 				});
@@ -27,3 +27,9 @@ inputEle.addEventListener('keyup', function(e){
   }
 });
 
+function paginaUsuario(id){
+	
+	console.log(id);
+	alert(id);
+	
+}

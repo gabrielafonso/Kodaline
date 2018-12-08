@@ -13,8 +13,26 @@ import javax.persistence.OneToMany;
 @Entity
 public class Fotografo extends Usuario{
 	
-	@Column(name = "nome" ,nullable=false)
+	@Column(name = "nome", nullable=false)
 	private String nome;
+	
+	@Column(name="detalhes")
+	private String detalhes;
+	
+	@Column(name="sobre")
+	private String sobre;
+	
+	@Column(name="endereco")
+	private String endereco;
+	
+	@Column(name="redes_sociais_facebook")
+	private String facebook_url;
+	
+	@Column(name="redes_sociais_twitter")
+	private String twitter_url;
+	
+	@Column(name="redes_sociais_instagram")
+	private String instagram_url;
 	
 	@OneToMany(
 			mappedBy = "owner",
