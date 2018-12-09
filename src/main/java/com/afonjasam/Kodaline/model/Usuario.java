@@ -7,13 +7,15 @@ import javax.persistence.*;
 import javax.validation.Valid;
 
 @Entity
-@Inheritance(strategy=InheritanceType.JOINED)
+/*@Inheritance(strategy=InheritanceType.JOINED)*/
 public class Usuario {
 
 	@Id	
 	@GeneratedValue
 	private Long id;
 	
+	@Column(name = "name", nullable=false)
+	private String nome;
 	@Column(name = "email", nullable=false, unique=true)
 	private String email;
 	@Column(name = "password", nullable=false, unique=true)
@@ -56,6 +58,14 @@ public class Usuario {
 	
 	public void addTelefone(@Valid Telefone telefone) {
 		this.telefones.add(telefone);
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	@Override
