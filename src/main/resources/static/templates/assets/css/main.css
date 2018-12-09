@@ -1197,6 +1197,107 @@
 			margin-left: 2em;
 		}
 
+/* Login */
+
+	#login-bar{
+		background: #0d1217;
+		z-index: 10002;
+		position: relative;
+	
+	}
+	
+	.login-informacoes{
+		width: 100%;
+		margin: auto 50%;
+	}
+	
+	.login-informacoes label{
+		color: #ffffff;
+		margin: 0 0 0 0;
+	}
+
+	.login-nav{
+		width: 50%;
+		
+		margin: 0 0 0 0; 
+	}
+	
+	#cadastro {
+
+		display: -ms-flexbox;
+		-ms-flex-pack: justify;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-wrap: wrap;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-moz-justify-content: space-between;
+		-webkit-justify-content: space-between;
+		-ms-justify-content: space-between;
+		justify-content: space-between;
+		background: #ececec;
+	}
+
+		#cadastro form {
+			margin: 0;
+		}
+
+		#cadastro .icons {
+			margin-bottom: 1em;
+		}
+
+		#cadastro .column {
+			padding: 3.5em 0 1.5em 0;
+			padding-left: 3.5em;
+			padding-right: 3.5em;
+			width: 50%;
+		}
+
+		#cadastro .column.apresentacao {
+			background: #e6e6e6;
+		}
+
+		@media screen and (max-width: 980px) {
+
+			#cadastro .column {
+				padding: 2em 0 0.1em 0;
+				padding-left: 2em;
+				padding-right: 2em;
+			}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#cadastro .column {
+				width: 100%;
+			}
+
+		}
+
+		@media screen and (max-width: 480px) {
+
+			#cadastro .column {
+				padding: 1em 0 0.1em 0;
+				padding-left: 1em;
+				padding-right: 1em;
+			}
+
+		}
+		
+		#nome-erro, #email-erro, #senha-erro, #csenha-erro{
+			margin: 0 0 0 0;
+			
+		}
+		
+		#formulario-cadastro p{
+			margin: 0 0 0 0;
+			color: red
+		}
+
 /* Section/Article */
 
 	section.special, article.special {
