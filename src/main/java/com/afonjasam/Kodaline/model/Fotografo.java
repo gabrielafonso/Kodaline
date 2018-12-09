@@ -12,10 +12,7 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class Fotografo extends Usuario{
-	
-	@Column(name = "nome", nullable=false)
-	private String nome;
-	
+		
 	@Column(name="detalhes")
 	private String detalhes;
 	
@@ -40,14 +37,55 @@ public class Fotografo extends Usuario{
 			orphanRemoval = true
 	)
 	private List<Album> album = new ArrayList<>();
-
-	public String getNome() {
-		return nome;
+	
+	public String getDetalhes() {
+		return detalhes;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setDetalhes(String detalhes) {
+		this.detalhes = detalhes;
 	}
+
+	public String getSobre() {
+		return sobre;
+	}
+
+	public void setSobre(String sobre) {
+		this.sobre = sobre;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getFacebook_url() {
+		return facebook_url;
+	}
+
+	public void setFacebook_url(String facebook_url) {
+		this.facebook_url = facebook_url;
+	}
+
+	public String getTwitter_url() {
+		return twitter_url;
+	}
+
+	public void setTwitter_url(String twitter_url) {
+		this.twitter_url = twitter_url;
+	}
+
+	public String getInstagram_url() {
+		return instagram_url;
+	}
+
+	public void setInstagram_url(String instagram_url) {
+		this.instagram_url = instagram_url;
+	}
+
 
 	@Override
 	public int hashCode() {
