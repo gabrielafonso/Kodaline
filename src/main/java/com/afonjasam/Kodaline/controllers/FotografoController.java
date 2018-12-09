@@ -51,8 +51,14 @@ public class FotografoController {
 					fotografo.setNome(fotografoRequest.getNome());
 					fotografo.setPassword(fotografoRequest.getPassword());
 					fotografo.setTelefones(fotografoRequest.getTelefones());
-		            return fotografoRepository.save(fotografo);
-		}).orElseThrow(()-> new ResourceNotFoundException("Fotografo not found: " +fotografoId));
+					fotografo.setDetalhes(fotografoRequest.getDetalhes());
+					fotografo.setEndereco(fotografoRequest.getEndereco());
+					fotografo.setSobre(fotografoRequest.getSobre());
+					fotografo.setFacebook_url(fotografoRequest.getFacebook_url());
+					fotografo.setInstagram_url(fotografoRequest.getInstagram_url());
+					fotografo.setTwitter_url(fotografoRequest.getTwitter_url());
+					return fotografoRepository.save(fotografo);
+		}).orElseThrow(()-> new ResourceNotFoundException("Fotografo not found: " + fotografoId));
 	}
 	
 	@PostMapping("fotografo/{fotografoId}/addtelefone")
