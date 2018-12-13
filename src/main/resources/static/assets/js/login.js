@@ -10,7 +10,11 @@ inputLogin.addEventListener('keyup', function(e){
 					for(let i = 0; i < data.content.length ;i++){
 						let f = data.content[i];
 						if((`${f.email}` == email || `${f.nome}` == email) && `${f.password}` == senha){
-							alert("Usuario - " + `${f.id}` + " - falta agora redirecionar para página de usuario");
+							console.log(f);
+							localStorage.setItem("user", f.id);
+							console.log(localStorage);
+							alert("Usuario - " + `${f.id}` + " - falta agora redirecionar para página de usuario / " + localStorage);
+							document.location = 'paginaUsuario.html';
 						}
 					}
 				});
