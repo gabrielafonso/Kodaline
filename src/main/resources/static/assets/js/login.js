@@ -1,28 +1,61 @@
+//const inputLogin = document.getElementById('login-nav');
+//inputLogin.addEventListener('keyup', function(e){
+//  var key = e.which || e.keyCode;
+//  if (key == 13) {
+//		let email = document.getElementById("login-nome").value;
+//		let senha = document.getElementById("login-senha").value;
+//		fetch("/fotografo").then(function(response){
+//			if(response.status >= 200 && response.status <= 300){
+//				response.json().then(function(data){
+//					for(let i = 0; i < data.content.length ;i++){
+//						let f = data.content[i];
+//						if((`${f.email}` == email || `${f.nome}` == email) && `${f.password}` == senha){
+//							console.log(f);
+//							localStorage.setItem("user", f.id);
+//							console.log(localStorage);
+//							alert("Usuario - " + `${f.id}` + " - falta agora redirecionar para página de usuario / " + localStorage);
+//							document.location = 'paginaUsuario.html';
+//						}
+//					}
+//				});
+//			}
+//		}).catch(function(error){
+//			console.log(error);
+//		});
+//  }
+//});
+
 const inputLogin = document.getElementById('login-nav');
 inputLogin.addEventListener('keyup', function(e){
   var key = e.which || e.keyCode;
   if (key == 13) {
 		let email = document.getElementById("login-nome").value;
-		let senha = document.getElementById("login-senha").value;
-		fetch("/fotografo").then(function(response){
-			if(response.status >= 200 && response.status <= 300){
-				response.json().then(function(data){
-					for(let i = 0; i < data.content.length ;i++){
-						let f = data.content[i];
-						if((`${f.email}` == email || `${f.nome}` == email) && `${f.password}` == senha){
-							console.log(f);
-							localStorage.setItem("user", f.id);
-							console.log(localStorage);
-							alert("Usuario - " + `${f.id}` + " - falta agora redirecionar para página de usuario / " + localStorage);
-							document.location = 'paginaUsuario.html';
-						}
-					}
-				});
-			}
+		let password = document.getElementById("login-senha").value;
+		let data = {
+			"email": email,
+			"password": password
+		}
+	
+		fetch("/login",{
+			method: "POST",
+			headers: {
+				"Content-Type": "application/JSON"
+			},
+			body: JSON.stringify(data)
+		}).then(function(response){
+			
+			response.json().then(function(user){
+//				console.log(user);
+//				console.log(user.id);
+
+				let usuario = JSON.stringify(user);
+				localStorage.setItem("user", usuario);
+				
+				document.location = 'paginaUsuario.html';
+			});
 		}).catch(function(error){
 			console.log(error);
 		});
-		
   }
 });
 
@@ -83,8 +116,19 @@ function cadastrarFotografo(){
 		}).then(function(response){
 			let form = document.getElementById("formulario-cadastro");
 			form.innerHTML += "Cadastrado com sucesso!";
+			
+			
 		}).catch(function(error){
 			console.log(error);
 		})
 	}
+}
+
+verificarLoginFeito();
+function verificarLoginFeito(){
+//	console.log(JSON.parse(localStorage.getItem("user")).id);
+	
+	if(JSON.parse(localStorage.getItem("user")) != null){
+		window.location.href="paginaUsuario.html"
+	}	
 }

@@ -1,5 +1,7 @@
 package com.afonjasam.Kodaline.controllers;
 
+import java.util.Map;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +42,15 @@ public class FotografoController {
 	@PostMapping("/fotografo")
 	public Fotografo createFotografo(@Valid @RequestBody Fotografo fotografo){
 		return fotografoRepository.save(fotografo);
-}
+	}
+	
+	@PostMapping("/login")
+	public Fotografo loginFotografo(@RequestBody Map<String, String> params){
+		return fotografoRepository.findByEmailAndPassword(params.get("email"), params.get("password"));
+	}
+	
+
+	
 	@PutMapping("/fotografo/{fotografoId}")
 	public Fotografo updateFotografo (@PathVariable Long fotografoId, 
 			                          @Valid @RequestBody Fotografo fotografoRequest) {

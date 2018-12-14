@@ -17,7 +17,7 @@ inputEle.addEventListener('keyup', function(e){
 						let f = data.content[i];
 						console.log(f);
 						if(`${f.nome}` == fotPesquisa){
-							fotografos.innerHTML += `<button type="button" onclick="paginaUsuario(${f.id})"><tr><td>${f.nome}</td><td>${f.email}</td></button>`
+							fotografos.innerHTML += `<tr><td>${f.nome}</td><td><button type="button" onclick="paginaUsuario(${f.id})"></td></button>`
 						}
 					}
 				});

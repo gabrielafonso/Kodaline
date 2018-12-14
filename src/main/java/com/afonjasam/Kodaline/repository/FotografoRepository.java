@@ -9,4 +9,6 @@ import com.afonjasam.Kodaline.model.Fotografo;
 @Repository
 public interface FotografoRepository extends JpaRepository<Fotografo, Long>{
 
+	public Fotografo findByEmailAndPassword(String email, String password);
+	
 }
