@@ -8,6 +8,8 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+
+@Configuration
 public class SegurityConfig extends WebSecurityConfigurerAdapter{
 	  @Autowired
 	    JwtTokenProvider jwtTokenProvider;
