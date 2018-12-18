@@ -24,6 +24,11 @@ public class Usuario implements UserDetails{
 	private String email;
 	@Column(name = "password", nullable=false, unique=true)
 	private String password;
+
+	@ElementCollection(fetch = FetchType.EAGER)
+    private List<String> roles = new ArrayList<>();
+	
+	
 	
 	@OneToMany(
 			mappedBy = "owner",
@@ -33,6 +38,14 @@ public class Usuario implements UserDetails{
 	
 	private List<Telefone> telefones = new ArrayList<>();
 	
+	public List<String> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -125,31 +138,34 @@ public class Usuario implements UserDetails{
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.email;
 	}
 
+	
 	@Override
 	public boolean isAccountNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
+	
+	
 	
 }
