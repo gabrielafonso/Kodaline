@@ -1,15 +1,19 @@
 package com.afonjasam.Kodaline.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.*;
 import javax.validation.Valid;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 @Entity
 /*@Inheritance(strategy=InheritanceType.JOINED)*/
-public class Usuario {
-
+public class Usuario implements UserDetails{
+	
 	@Id	
 	@GeneratedValue
 	private Long id;
@@ -26,6 +30,7 @@ public class Usuario {
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
 	)
+	
 	private List<Telefone> telefones = new ArrayList<>();
 	
 	public String getEmail() {
@@ -109,6 +114,42 @@ public class Usuario {
 		} else if (!telefones.equals(other.telefones))
 			return false;
 		return true;
+	}
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getUsername() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 	
 }
